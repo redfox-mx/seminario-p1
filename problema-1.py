@@ -4,7 +4,7 @@ message('Programa para aprender las tablas de multiplicar')
 n = question('Con que numero queres empezar? ', to=int)
 
 correctness = 0
-for i in range(1, n + 1):
+for i in range(1, 11):
     ans = question(f'{n} * {i} = ', to=int)
     if ans == n * i:
         correctness += 1
