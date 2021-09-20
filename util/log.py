@@ -29,3 +29,6 @@ def question(message, qtype=INPUT_QUESTION, to=None):
     elif qtype == OK_QUESTION:
         ans = _questions.qok(message)
     return to(ans) if to else ans
+
+def divider(size, fill='-'):
+    message(size * fill)
