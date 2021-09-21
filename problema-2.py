@@ -14,6 +14,7 @@ def add(table: Table):
     cp = up * fc + cf
     table.append(des, up, fc, cf, cp)
 
+add(data)
 while question('Añadir producto?', qtype=OK_QUESTION):
     add(data)
 
