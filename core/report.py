@@ -1,5 +1,5 @@
 from core.table import Table
-from util.log import message, trim
+from util.log import message, trim, divider
 
 class Report():
     def __init__(self, table: Table, size=20):
@@ -8,12 +8,12 @@ class Report():
         self.FIEL_WIDTH = size
 
     def show(self, full=False):
-        message(self.WIDTH * '-')
+        divider(self.WIDTH)
         for key in self.table.headings():
             message(f'{key:^20}', trimed=True, end='', size=self.FIEL_WIDTH)
         message('')
 
-        message(self.WIDTH * '-')
+        divider(self.WIDTH)
         for row in self.table.get_table():
             for element in row:
                 if isinstance(element, int):
@@ -24,11 +24,11 @@ class Report():
                     message(f'{element:{self.FIEL_WIDTH}}', trimed=self.FIEL_WIDTH, end='')
             message('')
 
-        message(self.WIDTH * '-')
+        divider(self.WIDTH)
         if full:
             self._show_full_()
             message('')
-            message(self.WIDTH * '-')
+            divider(self.WIDTH)
     
     def _show_full_(self):
         total = 'Total ' + str(len( self.table.get_table() ))

@@ -20,3 +20,6 @@ class Table():
     
     def headings(self):
         return self.titles.keys()
+    
+    def get_col(self, colname):
+        return self.as_ndarray()[:,self.titles[colname]]
